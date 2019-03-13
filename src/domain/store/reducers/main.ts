@@ -8,7 +8,7 @@
  */
 
 import { getLogger } from 'domain/logger';
-import { store, State, Page, Item, DetailItem } from 'domain/store/main';
+import { store, State, Page, Item } from 'domain/store/main';
 
 const logger = getLogger('State');
 

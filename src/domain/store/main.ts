@@ -11,36 +11,20 @@ import { createAtom } from 'js-atom';
 
 export type HomePage = { name: 'HOME_PAGE' };
 
-export type DetailPage = { name: 'DETAIL_PAGE' };
+export type DocumentsPage = { name: 'DOCUMENTS_PAGE' };
+export type HistoryPage = { name: 'HISTORY_PAGE' };
 
-export type Page = HomePage | DetailPage;
+
+export type Page = HomePage | DocumentsPage | HistoryPage;
 
 export type Item = { name: string; url: string };
-
-export type DetailItem = {
-  name: string;
-  height: number;
-  weight: number;
-  sprites: {
-    frontDefault: string;
-  };
-};
-
-export type DetailItemFromNetwork = {
-  name: string;
-  height: number;
-  weight: number;
-  sprites: {
-    front_default: string;
-  };
-};
 
 export type State = {
   currentPage: Page;
   allItems: Array<Item>;
   filteredItems: Array<Item>;
-  detail: DetailItem;
-  shadowColor: string;
+  messages: Array<any>;
+  documents: Array<any>;
   loading: boolean;
 };
 
@@ -48,15 +32,22 @@ const defaultState: State = {
   currentPage: { name: 'HOME_PAGE' },
   allItems: [],
   filteredItems: [],
-  detail: {
-    name: '',
-    height: 0,
-    weight: 0,
-    sprites: {
-      frontDefault: ''
-    }
+  messages: [  {
+    content: 'hello',
+    showSpeaker: true,
+    direction: 'row'
   },
-  shadowColor: '#000',
+  {
+    content: 'how are you',
+    showSpeaker: false,
+    direction: 'row'
+  },
+  {
+    content: 'Im super great home slice!',
+    showSpeaker: true,
+    direction: 'row-reverse'
+  }],
+  documents: [],
   loading: true
 };
 

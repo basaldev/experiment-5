@@ -20,15 +20,33 @@ const logger = getLogger('Middleware/router');
 function homeRouter(onRoute: OnRoute) {
   page('', onRoute);
 }
+function documentsRouter(onRoute: OnRoute) {
+  page('/docs', onRoute);
+}
+function historyRouter(onRoute: OnRoute) {
+  page('/history', onRoute);
+}
+
 export default function startRouters() {
+  debugger
   homeRouter(ctx => {
     logger.debug('Home route');
     updateCurrentPage({ name: 'HOME_PAGE' });
+  });
+  
+  documentsRouter(ctx => {
+    logger.debug('Document route');
+    updateCurrentPage({ name: 'DOCUMENTS_PAGE' });
+  });
+  historyRouter(ctx => {
+    logger.debug('Document route');
+    updateCurrentPage({ name: 'HISTORY_PAGE' });
   });
 
   page();
 }
 
-export function detailRoute(name: string) {
-  return `/detail/${name}`;
+export function navigate(route:string, event:any){
+  event.preventDefault();
+   page(route)
 }

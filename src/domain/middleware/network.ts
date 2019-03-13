@@ -10,7 +10,5 @@
 import { getLogger } from 'domain/logger';
 
 const logger = getLogger('Middleware/network');
-const URL = 'https://pokeapi.co/api/v2/type/1/';
-const URL_DETAIL = 'https://pokeapi.co/api/v2/pokemon/';
 
 // put network here
