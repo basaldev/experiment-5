@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { currentPage } from 'domain/store/selectors/main';
+import { Grid }  from '@material-ui/core';
 
 export function App() {
 
@@ -15,8 +16,8 @@ export function App() {
   })(currentPage().name);
 
   return (
-    <div className={`container`}>
+    <Grid className={`container`}>
           { content }
-    </div>
+    </Grid>
   );
 }
