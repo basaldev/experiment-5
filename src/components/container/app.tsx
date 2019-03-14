@@ -7,12 +7,8 @@ import { DocumentsView } from 'components/container/documents-view';
 import { navigate } from 'domain/middleware/router';
 import { css } from 'emotion';
 
-window['AWS'].config.region = 'us-east-1'; // Region
-window['AWS'].config.credentials = new window['AWS'].CognitoIdentityCredentials({
-		// Provide your Pool Id here
-			IdentityPoolId: 'us-east-1:a7ef0bcd-4c3e-4965-8342-688cedd4f60e',
-});
-window['lexruntime'] = new window['AWS'].LexRuntime();
+
+const lexruntime = new window['AWS'].LexRuntime();
 
 export function App() {
   const content = (pageName => {
@@ -21,8 +17,8 @@ export function App() {
         return <ChatView
           messages={getMessages()}
           textInput={getInputText()}
-          lexruntime={window['lexruntime']}
-          sessionAttributes={{}}
+          lexruntime={lexruntime}
+          sessionAttributes={getSessionAttributes()}
           />;
       case 'DOCUMENTS_PAGE':
         return <DocumentsView documents={getDocuments()} />;

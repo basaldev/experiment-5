@@ -8,6 +8,7 @@
  */
 
 import { createAtom } from 'js-atom';
+import { Bubble } from 'components/presentational/bubble';
 
 export type HomePage = { name: 'HOME_PAGE' };
 
@@ -35,19 +36,10 @@ const defaultState: State = {
   allItems: [],
   filteredItems: [],
   messages: [  {
-    content: 'hello',
+    content: Bubble('Hi, How can I help you today?'),
     showSpeaker: true,
-    direction: 'row'
-  },
-  {
-    content: 'how are you',
-    showSpeaker: false,
-    direction: 'row'
-  },
-  {
-    content: 'Im super great home slice!',
-    showSpeaker: true,
-    direction: 'row-reverse'
+    direction: 'row',
+    speaker: 'BOT'
   }],
   inputText: '',
   documents: [],
