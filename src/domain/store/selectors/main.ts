@@ -12,6 +12,13 @@ export function getMessages(): Array<any> {
   return state().messages;
 }
 
+export function getInputText(): string {
+  return state().inputText;
+}
+export function getSessionAttributes(): any {
+  return state().sessionAttributes;
+}
+
 export function getDocuments(): Array<any> {
   return state().documents;
 }

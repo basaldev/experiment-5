@@ -28,12 +28,12 @@ function historyRouter(onRoute: OnRoute) {
 }
 
 export default function startRouters() {
-  debugger
+
   homeRouter(ctx => {
     logger.debug('Home route');
     updateCurrentPage({ name: 'HOME_PAGE' });
   });
-  
+
   documentsRouter(ctx => {
     logger.debug('Document route');
     updateCurrentPage({ name: 'DOCUMENTS_PAGE' });

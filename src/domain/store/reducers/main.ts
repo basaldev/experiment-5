@@ -17,3 +17,22 @@ export function updateCurrentPage(currentPage: Page) {
   return store.swap(oldState => ({ ...oldState, currentPage }));
 }
 
+export function updateInputText(inputText: string) {
+  return store.swap(oldState => ({ ...oldState, inputText }));
+}
+export function updatesessionAttributes(sessionAttributes:any){
+  logger.debug(`Update sessionAttributes `, sessionAttributes);
+  return store.swap(oldState => ({
+    ...oldState,
+    sessionAttributes
+  }));
+}
+
+export function updateChat(message:any){
+  return store.swap(oldState => ({
+    ...oldState,
+    messages: [
+    ...oldState.messages,
+    message
+  ]}));
+}

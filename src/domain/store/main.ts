@@ -26,6 +26,8 @@ export type State = {
   messages: Array<any>;
   documents: Array<any>;
   loading: boolean;
+  inputText:string;
+  sessionAttributes: any;
 };
 
 const defaultState: State = {
@@ -47,8 +49,10 @@ const defaultState: State = {
     showSpeaker: true,
     direction: 'row-reverse'
   }],
+  inputText: '',
   documents: [],
-  loading: true
+  loading: true,
+  sessionAttributes: {}
 };
 
 export const store = createAtom(defaultState);
