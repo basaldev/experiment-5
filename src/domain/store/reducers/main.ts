@@ -36,3 +36,42 @@ export function updateChat(message:any){
     message
   ]}));
 }
+
+export function updateDiagnosis(newDianosis:any){
+  return store.swap(oldState => ({
+    ...oldState,
+    dianosis: [
+    ...oldState.dianosis,
+    newDianosis
+  ]}));
+}
+
+export function updateMyDoctor(newDoctor:any) {
+  return store.swap(oldState => ({
+    ...oldState,
+    mySuggestions: [
+    ...oldState.mySuggestions,
+    newDoctor
+  ]}));
+}
+export function updateScan(scan:any) {
+  return store.swap(oldState => ({
+    ...oldState,
+    scans: [
+    ...oldState.scans,
+    scan
+  ]}));
+}
+export function updateQuestionaireStatus(isComplete:boolean){
+  return store.swap(oldState => ({
+    ...oldState,
+    questionnaireFinished: isComplete
+  }));
+}
+
+export function updateQuestionaire(questions: any) {
+  return store.swap(oldState => ({
+    ...oldState,
+    questions
+  }));
+}

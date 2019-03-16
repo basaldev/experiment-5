@@ -22,3 +22,22 @@ export function getSessionAttributes(): any {
 export function getDocuments(): Array<any> {
   return state().documents;
 }
+export function getDianosis(): Array<any> {
+  return state().dianosis;
+}
+
+export function getDoctors(): Array<any> {
+  return state().doctors;
+}
+export function getmySuggestions(): Array<any> {
+  return state().mySuggestions;
+}
+export function getQuestionnaire(): Array<any> {
+  return state().questionnaire;
+}
+export function getQuestionnaireFinished(): boolean {
+  return state().questionnaireFinished;
+}
+export function getScans(): Array<any> {
+  return state().scans;
+}

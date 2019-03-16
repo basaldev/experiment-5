@@ -8,17 +8,52 @@
  */
 
 import { getLogger } from 'domain/logger';
-import { updateChat, updateInputText, updatesessionAttributes } from 'domain/store/reducers/main';
+import { updateChat, updateQuestionaireStatus, updateMyDoctor, updateInputText, updateQuestionaire, updatesessionAttributes, updateDiagnosis, updateScan } from 'domain/store/reducers/main';
+import { getDoctors } from 'domain/store/selectors/main';
 import { DianosesCard } from 'components/presentational/dianoses-card';
 import { Bubble } from 'components/presentational/bubble';
-
+import page from 'page';
 const logger = getLogger('Middleware/user');
+
+export function saveDoctor(doctor: object){
+  updateMyDoctor(doctor);
+  page('/4');
+}
+
+export function questionareStatusChanged(isCompleted: boolean){
+  updateQuestionaireStatus(isCompleted);
+}
+
+export function onSliderChange(questions, step, value){
+  const newQuestions = questions[step].value = value;
+  updateQuestionaire(newQuestions);
+}
+
+function normalizeLexResponse(message:string){
+  return JSON.parse(message);
+}
+
+export function saveScan(scan: object) {
+  page('/');
+  return updateScan(scan);
+}
+
+export function saveDianoses(issue: object){
+  //find doctor
+  const doctor = getDoctors()[0];
+  const newDiagnosis = {
+    issue,
+    doctor
+  }
+  updateDiagnosis(newDiagnosis);
+}
 
 //create react app
 export function showResponse(lexResponse) {
   if (lexResponse.dialogState === 'Fulfilled') {
+
     updateChat({
-      content: DianosesCard(lexResponse.message),
+      content: DianosesCard(normalizeLexResponse(lexResponse.message), true),
       showSpeaker: true,
       direction: 'row',
       speaker: 'BOT'
