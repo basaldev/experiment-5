@@ -1,5 +1,15 @@
 import * as React from "react"
-import { Grid, GridList, Button, Step, Paper, StepContent, StepLabel, Typography, Stepper } from "@material-ui/core"
+import {
+  Grid,
+  GridList,
+  Button,
+  Step,
+  Paper,
+  StepContent,
+  StepLabel,
+  Typography,
+  Stepper
+} from "@material-ui/core"
 import Slider from "@material-ui/lab/Slider"
 import { DataCard } from "components/presentational/data-card"
 import { onSliderChange, questionareStatusChanged } from "domain/middleware/user"
@@ -29,8 +39,18 @@ export function Profile(questionnaire: any, questionnaireFinished: boolean, scan
 }
 
 export function SimpleSlider(props: any) {
-  return <Slider max={10} value={props.value} aria-labelledby="label" onChange={props.handleChange} />
+  return (
+    <Slider
+      step={1}
+      min={1}
+      max={10}
+      value={props.value}
+      aria-labelledby="label"
+      onChange={props.handleChange}
+    />
+  )
 }
+
 function resetButton(questionnaireFinished) {
   if (questionnaireFinished) {
     return (
@@ -45,6 +65,7 @@ function resetButton(questionnaireFinished) {
     )
   }
 }
+
 function getStepContent(questionnaire, step) {
   const thisStep = questionnaire[step]
   return (
@@ -79,9 +100,6 @@ export class QuestionnaireView extends React.Component {
     activeStep: 0
   }
 
-  constructor(props) {
-    super(props)
-  }
   handleNext = () => {
     if (this.state.activeStep === this.props.questionnaire.length - 1) {
       page("/2")
@@ -106,7 +124,6 @@ export class QuestionnaireView extends React.Component {
   }
 
   render() {
-    // const { classes } = this.props;
     const steps = this.props.questionnaire.map(q => q.title)
     const { activeStep } = this.state
 
@@ -134,10 +151,19 @@ export class QuestionnaireView extends React.Component {
                 {getStepContent(this.props.questionnaire, index)}
                 <div className={actionsContainer}>
                   <div>
-                    <Button disabled={activeStep === 0} onClick={this.handleBack} className={button}>
+                    <Button
+                      disabled={activeStep === 0}
+                      onClick={this.handleBack}
+                      className={button}
+                    >
                       Back
                     </Button>
-                    <Button variant="contained" color="primary" onClick={this.handleNext} className={button}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={this.handleNext}
+                      className={button}
+                    >
                       {activeStep === steps.length - 1 ? "Finish" : "Next"}
                     </Button>
                   </div>
