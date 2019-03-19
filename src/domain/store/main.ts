@@ -91,7 +91,8 @@ const defaultState: State = {
       button: {
         text: "Install app",
         url: ""
-      }
+      },
+      tag: "loneliness"
     },
     {
       img: `http://www.patriciabannan.com/_site/img/og.png`,
@@ -101,7 +102,39 @@ const defaultState: State = {
       button: {
         text: "Apply Now",
         url: "http://www.patriciabannan.com/work-with-me/nutrition-coaching/"
-      }
+      },
+      tag: "nutrition"
+    },
+    {
+      img: `https://images.unsplash.com/photo-1453785675141-67637e2d4b5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80`,
+      name: "Nature Sounds",
+      description: "Relax with some soothing sounds from nature.",
+      button: {
+        text: "Get Nature Sounds",
+        url: "https://soundcloud.com/nature-sounds"
+      },
+      tag: "music"
+    },
+    {
+      img: `https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80`,
+      name: "Vitamin D Supplements",
+      description: "Vitamin D is good for you",
+      button: {
+        text: "Get Vit D Supplements",
+        url: "https://www.amazon.com/s?k=vitamin+d+supplements&ref=nb_sb_noss_1"
+      },
+      tag: "vitamins"
+    },
+    {
+      img: `https://images-na.ssl-images-amazon.com/images/I/71gyQZepQsL._SL1200_.jpg`,
+      name: "Brain Wave Scanner",
+      description: "Scanning your brain is fun!",
+      button: {
+        text: "Get Brain Wave Scanner",
+        url:
+          "https://www.amazon.com/NeuroSky-MindWave-Mobile-Brainwave-Starter/dp/B07CXN8NKX/ref=sr_1_1?keywords=brain+scanner&qid=1552980993&s=gateway&sr=8-1"
+      },
+      tag: "brain"
     }
   ],
   doctors: [
