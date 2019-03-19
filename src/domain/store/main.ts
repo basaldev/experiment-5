@@ -25,6 +25,7 @@ export type State = {
   inputText: string
   questionnaireFinished: boolean
   sessionAttributes: any
+  campaigns: any;
 }
 
 const defaultState: State = {
@@ -162,7 +163,7 @@ const defaultState: State = {
       title: `Lastest Scan`,
       date: new Date().toLocaleDateString(),
       value: `Mild`,
-      img: `https://images.unsplash.com/photo-1522849696084-818b29dfe210?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80`
+      img: `https://path.upmc.edu/cases/case74/images/gross4.jpg`
     }
   ],
   questionnaireFinished: false,
@@ -214,6 +215,19 @@ const defaultState: State = {
       title: `How many hours of the day are you awake for?`,
       description: `On a scale of 1 to 10, how many hours are you awake per day?`,
       value: null
+    }
+  ],
+  campaigns: [
+    {
+      img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
+      name: "Selfies In The Sun",
+      description:
+        "If you’re feeling down, or anxious, or just need someone to talk to, your Replika is here for you 24/7.",
+      button: {
+        text: "Post on Instagram",
+        url: "https://www.instagram.com/explore/tags/selfiesinthesun/"
+      },
+      tag: "#selfiesinthesun"
     }
   ],
   loading: true,

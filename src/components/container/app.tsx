@@ -4,6 +4,7 @@ import {
   getQuestionnaireFinished,
   getmySuggestions,
   getQuestionnaire,
+  getCampaigns,
   getScans
 } from "domain/store/selectors/main"
 import { Grid } from "@material-ui/core"
@@ -11,6 +12,7 @@ import { Navbar } from "components/presentational/navbar"
 import { ActionsView } from "components/container/actions-view"
 import { CameraView } from "components/container/camera-view"
 import { QuestionnaireView } from "components/container/questionnaire-view"
+import { SocialView } from "components/container/social-view";
 import { navigate } from "domain/middleware/router"
 import { css } from "emotion"
 
@@ -30,7 +32,7 @@ export function App() {
       case "THIRD_PAGE":
         return <CameraView />
       case "FOURTH_PAGE":
-        return <p>Social Media</p>
+        return <SocialView campaigns={getCampaigns()} />
       default:
         return <p>Page not found</p>
     }

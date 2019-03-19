@@ -48,3 +48,7 @@ export function getQuestionnaireFinished(): boolean {
 export function getScans(): Array<any> {
   return state().scans
 }
+
+export function getCampaigns(): Array<any> {
+  return state().campaigns;
+}
