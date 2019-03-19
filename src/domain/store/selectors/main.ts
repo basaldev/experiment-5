@@ -1,43 +1,54 @@
-import { store } from 'domain/store/main';
-import { State, Item, Page } from 'domain/store/main';
+import { store } from "domain/store/main"
+import { State, Item, Page } from "domain/store/main"
 
 export function state(): State {
-  return store.deref();
+  return store.deref()
 }
 
 export function currentPage(): Page {
-  return state().currentPage;
+  return state().currentPage
 }
+
 export function getMessages(): Array<any> {
-  return state().messages;
+  return state().messages
 }
 
 export function getInputText(): string {
-  return state().inputText;
+  return state().inputText
 }
+
 export function getSessionAttributes(): any {
-  return state().sessionAttributes;
+  return state().sessionAttributes
 }
 
 export function getDocuments(): Array<any> {
-  return state().documents;
+  return state().documents
 }
+
 export function getDianosis(): Array<any> {
-  return state().dianosis;
+  return state().dianosis
 }
 
 export function getDoctors(): Array<any> {
-  return state().doctors;
+  return state().doctors
 }
+
 export function getmySuggestions(): Array<any> {
-  return state().mySuggestions;
+  return state().mySuggestions
 }
+
 export function getQuestionnaire(): Array<any> {
-  return state().questionnaire;
+  return state().questionnaire
 }
+
 export function getQuestionnaireFinished(): boolean {
-  return state().questionnaireFinished;
+  return state().questionnaireFinished
 }
+
 export function getScans(): Array<any> {
-  return state().scans;
+  return state().scans
+}
+
+export function getCampaigns(): Array<any> {
+  return state().campaigns;
 }

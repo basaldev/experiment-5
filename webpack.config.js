@@ -1,21 +1,26 @@
-const path = require('path');
+const path = require("path")
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: "./src/main.ts",
   output: {
     path: path.resolve(__dirname, "build"),
-    publicPath: '/',
-    filename: "bundle.js" },
+    publicPath: "/",
+    filename: "bundle.js"
+  },
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-    modules: ['node_modules', 'src']
+    extensions: [".ts", ".tsx", ".js", ".json"],
+    modules: ["node_modules", "src"]
   },
 
   module: {
     rules: [
       { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
   },
-};
+
+  devServer: {
+    historyApiFallback: true
+  }
+}
