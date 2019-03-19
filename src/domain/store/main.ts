@@ -86,7 +86,8 @@ const defaultState: State = {
     {
       img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
       name: "Replika",
-      description: "If you’re feeling down, or anxious, or just need someone to talk to, your Replika is here for you 24/7.",
+      description:
+        "If you’re feeling down, or anxious, or just need someone to talk to, your Replika is here for you 24/7.",
       button: {
         text: "Install app",
         url: ""
@@ -134,43 +135,43 @@ const defaultState: State = {
   questionnaireFinished: false,
   questionnaire: [
     {
-      title: `How well do you eats?`,
-      description: `On a scale of 1 to 10 how healthly do you think you eat?`,
+      title: `How well do you eat?`,
+      description: `On a scale of 1 to 10, how healthily do you think you eat?`,
       value: 5
     },
     {
       title: `How often do you exercise?`,
-      description: `On a scale of 1 to 10 how healthly do you think you eat?`,
+      description: `On a scale of 1 to 10, how often do you exercise?`,
       value: 5
     },
     {
-      title: `How many hours sun do you get each day?`,
-      description: `In a normal day how many hours of sunlight do you get?`,
+      title: `How many hours of sun do you get each day?`,
+      description: `On average, how many hours of sunlight do you get?`,
       value: 5
     },
     {
       title: `How often do you drink alcohol?`,
-      description: `How many days ago did you drink alcohol?`,
+      description: `How many days ago did you last drink alcohol?`,
       value: 5
     },
     {
       title: `How much fresh air do you get each day?`,
-      description: `On a scale of 1 to 10 how healthly do you think you eat?`,
+      description: `On a scale of 1 to 10, how much fresh air do you get?`,
       value: 5
     },
     {
       title: `How easily do you trust people?`,
-      description: `On a scale of 1 to 10 how healthly do you think you eat?`,
+      description: `On a scale of 1 to 10, how easily do you trust people?`,
       value: 5
     },
     {
-      title: `How well can you breath?`,
-      description: `On a scale of 1 to 10 how healthly do you think you eat?`,
+      title: `How well can you breathe?`,
+      description: `On a scale of 1 to 10, how well can you breathe?`,
       value: 5
     },
     {
-      title: `How many hours of a day are you awake for?`,
-      description: `On a scale of 1 to 10 how healthly do you think you eat?`,
+      title: `How many hours of the day are you awake for?`,
+      description: `On a scale of 1 to 10, how many hours are you awake per day?`,
       value: 5
     }
   ],

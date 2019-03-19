@@ -1,5 +1,11 @@
 import React from "react"
-import { currentPage, getQuestionnaireFinished, getmySuggestions, getQuestionnaire, getScans } from "domain/store/selectors/main"
+import {
+  currentPage,
+  getQuestionnaireFinished,
+  getmySuggestions,
+  getQuestionnaire,
+  getScans
+} from "domain/store/selectors/main"
 import { Grid } from "@material-ui/core"
 import { Navbar } from "components/presentational/navbar"
 import { ActionsView } from "components/container/actions-view"
@@ -15,7 +21,11 @@ export function App() {
     switch (pageName) {
       case "HOME_PAGE":
         return (
-          <QuestionnaireView questionnaire={getQuestionnaire()} questionnaireFinished={getQuestionnaireFinished()} scans={getScans()} />
+          <QuestionnaireView
+            questionnaire={getQuestionnaire()}
+            questionnaireFinished={getQuestionnaireFinished()}
+            scans={getScans()}
+          />
         )
       case "SECOND_PAGE":
         return <ActionsView mySuggestions={getmySuggestions()} />
