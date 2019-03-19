@@ -135,44 +135,52 @@ const defaultState: State = {
   questionnaireFinished: false,
   questionnaire: [
     {
+      id: 1,
       title: `How well do you eat?`,
       description: `On a scale of 1 to 10, how healthily do you think you eat?`,
-      value: 5
+      value: null
     },
     {
+      id: 2,
       title: `How often do you exercise?`,
       description: `On a scale of 1 to 10, how often do you exercise?`,
-      value: 5
+      value: null
     },
     {
+      id: 3,
       title: `How many hours of sun do you get each day?`,
       description: `On average, how many hours of sunlight do you get?`,
-      value: 5
+      value: null
     },
     {
+      id: 4,
       title: `How often do you drink alcohol?`,
       description: `How many days ago did you last drink alcohol?`,
-      value: 5
+      value: null
     },
     {
+      id: 5,
       title: `How much fresh air do you get each day?`,
       description: `On a scale of 1 to 10, how much fresh air do you get?`,
-      value: 5
+      value: null
     },
     {
+      id: 6,
       title: `How easily do you trust people?`,
       description: `On a scale of 1 to 10, how easily do you trust people?`,
-      value: 5
+      value: null
     },
     {
+      id: 7,
       title: `How well can you breathe?`,
       description: `On a scale of 1 to 10, how well can you breathe?`,
-      value: 5
+      value: null
     },
     {
+      id: 8,
       title: `How many hours of the day are you awake for?`,
       description: `On a scale of 1 to 10, how many hours are you awake per day?`,
-      value: 5
+      value: null
     }
   ],
   loading: true,

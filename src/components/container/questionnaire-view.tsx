@@ -1,7 +1,6 @@
 import * as React from "react"
 import {
   Grid,
-  GridList,
   Button,
   Step,
   Paper,
@@ -44,7 +43,7 @@ export function SimpleSlider(props: any) {
       step={1}
       min={1}
       max={10}
-      value={props.value}
+      value={props.value || 5}
       aria-labelledby="label"
       onChange={props.handleChange}
     />
@@ -124,6 +123,7 @@ export class QuestionnaireView extends React.Component {
   }
 
   render() {
+    const { questionnaire, questionnaireFinished, scans } = this.props
     const steps = this.props.questionnaire.map(q => q.title)
     const { activeStep } = this.state
 
@@ -137,18 +137,20 @@ export class QuestionnaireView extends React.Component {
         >
           Your Profile
         </Typography>
-        {Profile(this.props.questionnaire, this.props.questionnaireFinished, this.props.scans)}
-        {resetButton(this.props.questionnaireFinished)}
+        {Profile(questionnaire, questionnaireFinished, scans)}
+        {resetButton(questionnaireFinished)}
         <Stepper
           activeStep={activeStep}
           orientation="vertical"
-          className={css` && { ${this.props.questionnaireFinished ? "display:none" : ""}};`}
+          className={css` && { ${questionnaireFinished ? "display:none" : ""}};`}
         >
-          {steps.map((label, index) => (
-            <Step key={label}>
-              <StepLabel>{label}</StepLabel>
+          {questionnaire.map((item, index) => (
+            <Step key={item.id}>
+              <StepLabel>
+                {item.title} {item.value && `(${item.value})`}
+              </StepLabel>
               <StepContent>
-                {getStepContent(this.props.questionnaire, index)}
+                {getStepContent(questionnaire, index)}
                 <div className={actionsContainer}>
                   <div>
                     <Button
@@ -164,7 +166,7 @@ export class QuestionnaireView extends React.Component {
                       onClick={this.handleNext}
                       className={button}
                     >
-                      {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                      {activeStep === questionnaire.length - 1 ? "Finish" : "Next"}
                     </Button>
                   </div>
                 </div>
@@ -174,7 +176,7 @@ export class QuestionnaireView extends React.Component {
         </Stepper>
         {activeStep === steps.length && (
           <Paper square elevation={0} className={resetContainer}>
-            <Typography>All steps completed - you're finished</Typography>
+            <Typography>All steps completed — you’re finished!</Typography>
             <Button onClick={this.handleReset} className={button}>
               Reset
             </Button>
