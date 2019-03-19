@@ -11,7 +11,7 @@ export function ActionsView(props: any) {
           padding: 24px;
         `}
       >
-        Your Suggestion
+        Suggestions
       </Typography>
       <Grid
         container

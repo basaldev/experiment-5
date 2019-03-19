@@ -13,8 +13,6 @@ import { CameraView } from "components/container/camera-view"
 import { QuestionnaireView } from "components/container/questionnaire-view"
 import { navigate } from "domain/middleware/router"
 import { css } from "emotion"
-import Fab from "@material-ui/core/Fab"
-import { Activity } from "react-feather"
 
 export function App() {
   const content = (pageName => {
@@ -31,6 +29,8 @@ export function App() {
         return <ActionsView mySuggestions={getmySuggestions()} />
       case "THIRD_PAGE":
         return <CameraView />
+      case "FOURTH_PAGE":
+        return <p>Social Media</p>
       default:
         return <p>Page not found</p>
     }
@@ -56,28 +56,16 @@ export function App() {
             },
             e => {
               navigate("/2", e)
+            },
+            e => {
+              navigate("/3", e)
+            },
+            e => {
+              navigate("/4", e)
             }
           ]}
         />
       </Grid>
-      <Fab
-        color="primary"
-        aria-label="Brain Activity"
-        className={css`
-      && {
-      position:absolute;
-      bottom: 5vh;
-      right: 0;
-      left: 0;
-      margin 0 auto;
-      }
-    `}
-        onClick={e => {
-          navigate("/3", e)
-        }}
-      >
-        <Activity />
-      </Fab>
     </Grid>
   )
 }
