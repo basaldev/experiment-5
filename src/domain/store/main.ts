@@ -97,7 +97,7 @@ const defaultState: State = {
     },
     {
       img: `http://www.patriciabannan.com/_site/img/og.png`,
-      name: "Patricia Bannan, MS, RDN",
+      name: "Health Coaching",
       description:
         "Our philosophy Having a healthy relationship with food is much more than the food itself. Simply counting calories or avoiding certain ele…",
       button: {
@@ -174,7 +174,7 @@ const defaultState: State = {
       title: `How well do you eat?`,
       shortTitle: 'Eating',
       description: `On a scale of 1 to 10, how healthily do you think you eat?`,
-      img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
+      img: `https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       value: null,
       unit: ''
     },
@@ -183,7 +183,7 @@ const defaultState: State = {
       title: `How often do you exercise?`,
       shortTitle: 'Exercise',
       description: `On a scale of 1 to 10, how often do you exercise?`,
-      img: `http://www.patriciabannan.com/_site/img/og.png`,
+      img: `https://images.unsplash.com/photo-1544216717-3bbf52512659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       value: null,
       unit: ''
     },
@@ -192,7 +192,7 @@ const defaultState: State = {
       title: `How many hours of sun do you get each day?`,
       shortTitle: 'Sunlight',
       description: `On average, how many hours of sunlight do you get?`,
-      img: `https://images.unsplash.com/photo-1453785675141-67637e2d4b5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80`,
+      img: `https://images.unsplash.com/photo-1532911557891-d12f6b98dddc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       value: null,
       unit: 'hrs'
     },
@@ -201,7 +201,7 @@ const defaultState: State = {
       title: `How often do you drink alcohol?`,
       shortTitle: 'Alcohol',
       description: `How many days ago did you last drink alcohol?`,
-      img: `https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80`,
+      img: `https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       value: null,
       unit: 'days ago'
     },
@@ -210,7 +210,7 @@ const defaultState: State = {
       title: `How much fresh air do you get each day?`,
       shortTitle: 'Fresh air',
       description: `On a scale of 1 to 10, how much fresh air do you get?`,
-      img: `https://images-na.ssl-images-amazon.com/images/I/71gyQZepQsL._SL1200_.jpg`,
+      img: `https://images.unsplash.com/photo-1523514601430-01f104e3d6c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       value: null,
       unit: ''
     },
@@ -219,7 +219,7 @@ const defaultState: State = {
       title: `How easily do you trust people?`,
       shortTitle: 'Trustness',
       description: `On a scale of 1 to 10, how easily do you trust people?`,
-      img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
+      img: `https://images.unsplash.com/photo-1436246745626-344c04303c72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       value: null,
       unit: ''
     },
@@ -228,7 +228,7 @@ const defaultState: State = {
       title: `How well can you breathe?`,
       shortTitle: 'Breathe',
       description: `On a scale of 1 to 10, how well can you breathe?`,
-      img: `http://www.patriciabannan.com/_site/img/og.png`,
+      img: `https://images.unsplash.com/photo-1514852328948-cae2306a687e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       value: null,
       unit: ''
     },
@@ -237,14 +237,14 @@ const defaultState: State = {
       title: `How many hours of the day are you awake for?`,
       shortTitle: 'Awake',
       description: `On a scale of 1 to 10, how many hours are you awake per day?`,
-      img: `https://images.unsplash.com/photo-1453785675141-67637e2d4b5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80`,
+      img: `https://images.unsplash.com/photo-1517898717281-8e4385a41802?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       value: null,
       unit: 'hrs'
     }
   ],
   campaigns: [
     {
-      img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
+      img: `https://images.unsplash.com/photo-1429277005502-eed8e872fe52?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80`,
       name: "Selfies In The Sun",
       description:
         "If you’re feeling down, or anxious, or just need someone to talk to, your Replika is here for you 24/7.",
