@@ -1,10 +1,10 @@
 import { createAtom } from "js-atom"
 import { Bubble } from "components/presentational/bubble"
 
-export type HomePage = { name: "HOME_PAGE" }
-export type SecondPage = { name: "SECOND_PAGE" }
-export type ThirdPage = { name: "THIRD_PAGE" }
-export type FourthPage = { name: "FOURTH_PAGE" }
+export type HomePage = { name: "HOME_PAGE"; value: 0 }
+export type SecondPage = { name: "SECOND_PAGE"; value: 1 }
+export type ThirdPage = { name: "THIRD_PAGE"; value: 2 }
+export type FourthPage = { name: "FOURTH_PAGE"; value: 3 }
 
 export type Page = HomePage | SecondPage | ThirdPage | FourthPage
 
@@ -25,11 +25,11 @@ export type State = {
   inputText: string
   questionnaireFinished: boolean
   sessionAttributes: any
-  campaigns: any;
+  campaigns: any
 }
 
 const defaultState: State = {
-  currentPage: { name: "HOME_PAGE" },
+  currentPage: { name: "HOME_PAGE", value: 0 },
   allItems: [],
   filteredItems: [],
   messages: [
@@ -163,7 +163,7 @@ const defaultState: State = {
       title: `Lastest Scan`,
       date: new Date().toLocaleDateString(),
       value: `Mild`,
-      img: `https://path.upmc.edu/cases/case74/images/gross4.jpg`
+      img: `https://www.healthimaging.com/sites/default/files/styles/media_image/public/2018-08/istock-587mribrain.jpg?itok=eO2Ooa-2`
     }
   ],
   questionnaireFinished: false,
