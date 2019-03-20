@@ -16,7 +16,18 @@ module.exports = {
   module: {
     rules: [
       { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 202192,
+            },
+          },
+        ],
+      },
     ]
   },
 
