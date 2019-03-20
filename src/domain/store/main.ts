@@ -259,7 +259,7 @@ const defaultState: State = {
       img: `https://images.unsplash.com/photo-1429277005502-eed8e872fe52?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80`,
       name: "Selfies In The Sun",
       description:
-        "If you’re feeling down, or anxious, or just need someone to talk to, your Replika is here for you 24/7.",
+        "If you’re feeling down, or anxious, Sunlight can help, Take a photo in the sun!.",
       button: {
         text: "Post on Instagram",
         url: "https://www.instagram.com/explore/tags/selfiesinthesun/"
