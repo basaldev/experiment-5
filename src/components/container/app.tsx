@@ -5,7 +5,8 @@ import {
   getmySuggestions,
   getQuestionnaire,
   getCampaigns,
-  getScans
+  getScans,
+  getSampleUsers
 } from "domain/store/selectors/main"
 import { Grid } from "@material-ui/core"
 import { Navbar } from "components/presentational/navbar"
@@ -14,6 +15,7 @@ import { CameraView } from "components/container/camera-view"
 import { QuestionnaireView } from "components/container/questionnaire-view"
 import { ProfileView } from "components/container/profile-view"
 import { SocialView } from "components/container/social-view"
+import { Login } from "components/container/login";
 import { navigate } from "domain/middleware/router"
 import { css } from "emotion"
 
@@ -46,6 +48,8 @@ export function App() {
         return <CameraView />
       case "FOURTH_PAGE":
         return <SocialView campaigns={getCampaigns()} />
+      case "LOGIN_PAGE":
+        return <Login sampleUsers={getSampleUsers()} />;
       default:
         return <p>Page not found</p>
     }
