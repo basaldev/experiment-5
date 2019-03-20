@@ -4,7 +4,9 @@
     "enabled": true,
     "autoAlias": true
   },
-  "alias": [],
+  "alias": [
+    "polaris-proto.now.sh"
+  ],
   "builds": [
     {
       "src": "package.json",
