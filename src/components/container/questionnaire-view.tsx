@@ -12,6 +12,7 @@ import {
 import Slider from "@material-ui/lab/Slider"
 import { onSliderChange, questionareStatusChanged } from "domain/middleware/user"
 import { css } from "emotion"
+import { Camera } from "react-feather";
 
 export function SimpleSlider(props: any) {
   return (
@@ -92,7 +93,7 @@ export class QuestionnaireView extends React.Component {
     const isFirst = activeStep === 0;
     const isLast = activeStep === steps.length - 1;
       return (
-        <div>
+        <div className={css`overflow: scroll; padding-bottom: 10vh;`}>
           <Typography
             variant="headline"
             className={css`

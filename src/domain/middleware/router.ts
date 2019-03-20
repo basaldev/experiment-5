@@ -50,11 +50,11 @@ export default function startRouters() {
   })
   thirdRouter(ctx => {
     logger.debug("Document route")
-    updateCurrentPage({ name: "THIRD_PAGE", value: 2 })
+    updateCurrentPage({ name: "THIRD_PAGE", value: null })
   })
   fourthRouter(ctx => {
     logger.debug("Document route")
-    updateCurrentPage({ name: "FOURTH_PAGE", value: 3 })
+    updateCurrentPage({ name: "FOURTH_PAGE", value: 2 })
   })
 
   page()

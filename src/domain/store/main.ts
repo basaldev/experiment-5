@@ -3,8 +3,8 @@ import { Bubble } from "components/presentational/bubble"
 
 export type HomePage = { name: "HOME_PAGE"; value: 0 }
 export type SecondPage = { name: "SECOND_PAGE"; value: 1 }
-export type ThirdPage = { name: "THIRD_PAGE"; value: 2 }
-export type FourthPage = { name: "FOURTH_PAGE"; value: 3 }
+export type ThirdPage = { name: "THIRD_PAGE"; value: null }
+export type FourthPage = { name: "FOURTH_PAGE"; value: 2 }
 export type LoginPage = { name: 'LOGIN_PAGE'; value: null };
 
 export type Page = HomePage | SecondPage | ThirdPage | FourthPage | LoginPage;
