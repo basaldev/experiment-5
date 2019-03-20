@@ -7,7 +7,8 @@ import {
   updateQuestionaire,
   updatesessionAttributes,
   updateDiagnosis,
-  updateScan
+  updateScan,
+  updateCurrentUser
 } from "domain/store/reducers/main"
 import { getDoctors } from "domain/store/selectors/main"
 import { DianosesCard } from "components/presentational/dianoses-card"
@@ -112,4 +113,10 @@ export function onKeyPressUpdateInputText(e) {
 
 export function scrollbottom(container) {
   container.scrollTop = container.scrollHeight
+}
+
+export function onChangeCurrentUser(user) {
+  console.log(user);
+  updateCurrentUser(user);
+  page('/');
 }

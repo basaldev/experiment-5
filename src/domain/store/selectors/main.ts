@@ -52,3 +52,11 @@ export function getScans(): Array<any> {
 export function getCampaigns(): Array<any> {
   return state().campaigns;
 }
+
+export function getUser(): { id: string } {
+  return state().user;
+}
+
+export function getSampleUsers(): Array<{ id: string; name: string; avatar: string; age: number }> {
+  return state().sampleUsers;
+}

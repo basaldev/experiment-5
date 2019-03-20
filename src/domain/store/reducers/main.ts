@@ -61,3 +61,10 @@ export function updateQuestionaire(questions: any) {
     questions
   }))
 }
+
+export function updateCurrentUser(user: { id: string; name: string; avatar: string; age: number }) {
+  return store.swap(oldState => ({
+    ...oldState,
+    user,
+  }));
+}

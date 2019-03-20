@@ -5,8 +5,9 @@ export type HomePage = { name: "HOME_PAGE"; value: 0 }
 export type SecondPage = { name: "SECOND_PAGE"; value: 1 }
 export type ThirdPage = { name: "THIRD_PAGE"; value: 2 }
 export type FourthPage = { name: "FOURTH_PAGE"; value: 3 }
+export type LoginPage = { name: 'LOGIN_PAGE'; value: null };
 
-export type Page = HomePage | SecondPage | ThirdPage | FourthPage
+export type Page = HomePage | SecondPage | ThirdPage | FourthPage | LoginPage;
 
 export type Item = { name: string; url: string }
 
@@ -25,7 +26,16 @@ export type State = {
   inputText: string
   questionnaireFinished: boolean
   sessionAttributes: any
-  campaigns: any
+  campaigns: any,
+  user: {
+    id: string;
+  };
+  sampleUsers: Array<{
+    name: string;
+    id: string;
+    avatar: string;
+    age: number;
+  }>;
 }
 
 const defaultState: State = {
@@ -256,7 +266,24 @@ const defaultState: State = {
     }
   ],
   loading: true,
-  sessionAttributes: {}
+  sessionAttributes: {},
+  user: {
+    id: null,
+  },
+  sampleUsers: [
+    {
+      name: 'user one',
+      id: 'xd0ktRwSbthgZJOMKxBn44potD52',
+      avatar: '',
+      age: 21,
+    },
+    {
+      name: 'user two',
+      id: 'y48Udj8T5Pf7r402LX2qYqNUYmz2',
+      avatar: '',
+      age: 59,
+    },
+  ],
 }
 
 export const store = createAtom(defaultState)
