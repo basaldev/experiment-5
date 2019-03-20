@@ -5,6 +5,7 @@ import { SuggestionCard, SuggestionListItem } from "components/presentational/su
 import difference from 'lodash.difference';
 
 
+
 function showSuggestions(props: any): Array<any> {
   //TODO move to user
   const { questionnaire, mySuggestions } = props
@@ -57,7 +58,10 @@ export function ActionsView(props: any) {
         direction="column"
         spacing={8}
         className={css`
+        && {
           padding: 16px;
+          ${filteredSuggestions.length === 0 ? 'display:none': ''}
+        }
         `}
       >
         {yourSuggestions(filteredSuggestions, props.questionnaireFinished)}
@@ -65,7 +69,10 @@ export function ActionsView(props: any) {
       <Typography
         variant="title"
         className={css`
+        && {
           padding: 24px;
+          ${filteredSuggestions.length === 0 ? 'display:none': ''}
+        }
         `}
       >
         Other suggestions

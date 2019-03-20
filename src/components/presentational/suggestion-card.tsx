@@ -47,7 +47,7 @@ export function SuggestionListItem(tile: any) {
       `}
     >
       <CardMedia
-        className={css` 
+        className={css`
           width: 150px;
           min-height: 100px;
         `}
@@ -72,7 +72,6 @@ export function SuggestionListItem(tile: any) {
             margin: auto -10px;
           `}
         >
-          <Chip key={tile.tag} label={tile.tag} variant="outlined" />
         </CardActions>
         <CardActions
           className={css`
