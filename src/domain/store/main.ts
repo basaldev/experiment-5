@@ -25,7 +25,7 @@ export type State = {
   inputText: string
   questionnaireFinished: boolean
   sessionAttributes: any
-  campaigns: any;
+  campaigns: any
 }
 
 const defaultState: State = {
@@ -163,7 +163,7 @@ const defaultState: State = {
       title: `Lastest Scan`,
       date: new Date().toLocaleDateString(),
       value: `Mild`,
-      img: `https://path.upmc.edu/cases/case74/images/gross4.jpg`
+      img: `https://www.healthimaging.com/sites/default/files/styles/media_image/public/2018-08/istock-587mribrain.jpg?itok=eO2Ooa-2`
     }
   ],
   questionnaireFinished: false,
