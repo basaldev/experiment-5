@@ -12,7 +12,7 @@ import { Navbar } from "components/presentational/navbar"
 import { ActionsView } from "components/container/actions-view"
 import { CameraView } from "components/container/camera-view"
 import { QuestionnaireView } from "components/container/questionnaire-view"
-import { SocialView } from "components/container/social-view";
+import { SocialView } from "components/container/social-view"
 import { navigate } from "domain/middleware/router"
 import { css } from "emotion"
 
@@ -28,7 +28,13 @@ export function App() {
           />
         )
       case "SECOND_PAGE":
-        return <ActionsView mySuggestions={getmySuggestions()} />
+        return (
+          <ActionsView
+            questionnaire={getQuestionnaire()}
+            questionnaireFinished={getQuestionnaireFinished()}
+            mySuggestions={getmySuggestions()}
+          />
+        )
       case "THIRD_PAGE":
         return <CameraView />
       case "FOURTH_PAGE":

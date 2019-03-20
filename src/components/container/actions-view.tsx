@@ -2,7 +2,39 @@ import * as React from "react"
 import { Grid, Typography } from "@material-ui/core"
 import { css } from "emotion"
 import { SuggestionCard } from "components/presentational/suggestion-card"
+
+function showSuggestions(props: any) {
+  const { questionnaire, questionnaireFinished, mySuggestions } = props
+  const { tag: suggestionTag } = mySuggestions
+
+  if (!questionnaireFinished) {
+    return <p>Please complete your Profile to get suggestions!</p>
+  }
+
+  // Questionnaire is finished, so decide which suggestions to show the user
+  // based on their questionnaire responses
+  let suggest = []
+  // questionnaire[5] ~ trust; mySuggestions[0] ~ loneliness
+  if (questionnaire[5].value < 4) suggest.push(mySuggestions[0])
+  // questionnaire[0] ~ eating; mySuggestions[1] ~ nutrition
+  if (questionnaire[0].value < 6) suggest.push(mySuggestions[1])
+  // questionnaire[6] ~ ease of breathing; mySuggestions[2] ~ music
+  if (questionnaire[6].value < 5) suggest.push(mySuggestions[2])
+  // questionnaire[2] ~ sun; mySuggestions[3] ~ vitamins
+  if (questionnaire[2].value < 5) suggest.push(mySuggestions[3])
+  // questionnaire[3] ~ drink alcohol; mySuggestions[4] ~ brain
+  if (questionnaire[3].value > 7) suggest.push(mySuggestions[4])
+
+  return suggest.map(tile => (
+    <Grid key={tile.tag} item>
+      {SuggestionCard(tile)}
+    </Grid>
+  ))
+}
+
 export function ActionsView(props: any) {
+  console.table(props.questionnaire)
+  console.table(props.mySuggestions)
   return (
     <>
       <Typography
@@ -21,7 +53,7 @@ export function ActionsView(props: any) {
           padding: 16px;
         `}
       >
-        {props.mySuggestions.map(tile => <Grid item>{SuggestionCard(tile)}</Grid>)}
+        {showSuggestions(props)}
       </Grid>
     </>
   )

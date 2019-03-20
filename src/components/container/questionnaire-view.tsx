@@ -101,7 +101,6 @@ export class QuestionnaireView extends React.Component {
 
   handleNext = () => {
     if (this.state.activeStep === this.props.questionnaire.length - 1) {
-      page("/2")
       questionareStatusChanged(true)
     }
     this.setState((state: any) => ({
