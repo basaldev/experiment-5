@@ -34,14 +34,14 @@ function getStepContent(thisStep, onSlide) {
         <CardMedia
           image={thisStep.img}
           className={css`
-            height: 150px;
+            height: 33vh;
           `}
         />
         <CardContent>{thisStep.description}</CardContent>
       </Card>
       <div
         className={css`
-          margin 40px 0 0;
+          margin: 40px 0 0;
         `}
       >
         <SimpleSlider
@@ -89,7 +89,7 @@ export class QuestionnaireView extends React.Component {
     const steps = this.props.questionnaire.map(q => q.title)
     const { activeStep } = this.state;
     const activeStepValue = questionnaire[activeStep] && questionnaire[activeStep].value;
-    const isFirst = activeStep === 0; 
+    const isFirst = activeStep === 0;
     const isLast = activeStep === steps.length - 1;
       return (
         <div>

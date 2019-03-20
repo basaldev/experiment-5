@@ -106,7 +106,7 @@ const defaultState: State = {
       tag: "loneliness"
     },
     {
-      img: `http://www.patriciabannan.com/_site/img/og.png`,
+      img: `https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80`,
       name: "Health Coaching",
       description:
         "Our philosophy Having a healthy relationship with food is much more than the food itself. Simply counting calories or avoiding certain ele…",
@@ -258,6 +258,17 @@ const defaultState: State = {
       name: "Selfies In The Sun",
       description:
         "If you’re feeling down, or anxious, or just need someone to talk to, your Replika is here for you 24/7.",
+      button: {
+        text: "Post on Instagram",
+        url: "https://www.instagram.com/explore/tags/selfiesinthesun/"
+      },
+      tag: "#selfiesinthesun"
+    },
+    {
+      img: `https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80`,
+      name: "FoodAndFriends",
+      description:
+        "Go out to lunch with your friends and family",
       button: {
         text: "Post on Instagram",
         url: "https://www.instagram.com/explore/tags/selfiesinthesun/"

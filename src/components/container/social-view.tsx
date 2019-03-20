@@ -22,11 +22,9 @@ export function SocialView(props: any) {
           padding: 16px;
         `}
       >
-        {props.campaigns.map(tile => (
-          <Grid item key={tile.name}>
-            {CampaignCard(tile)}
+          <Grid item key={props.campaigns[0].name}>
+            {CampaignCard(props.campaigns[0])}
           </Grid>
-        ))}
       </Grid>
       <Typography
         variant="title"
@@ -36,7 +34,7 @@ export function SocialView(props: any) {
       >
         Past campaigns
       </Typography>
-      <List>{props.campaigns.map(tile => CampaignListItem(tile))}</List>
+      <List>{CampaignListItem(props.campaigns[1])}</List>
     </>
   )
 }

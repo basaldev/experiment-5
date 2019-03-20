@@ -7,7 +7,7 @@ export function Navbar(props: any) {
     <BottomNavigation value={props.value} showLabels>
       <BottomNavigationAction onClick={props.routes[0]} label="Profile" icon={<User />} />
       <BottomNavigationAction onClick={props.routes[1]} label="Suggestions" icon={<Heart />} />
-      <BottomNavigationAction onClick={props.routes[3]} label="Social" icon={<Share2 />} />
+      <BottomNavigationAction onClick={props.routes[2]} label="Social" icon={<Share2 />} />
     </BottomNavigation>
   )
 }

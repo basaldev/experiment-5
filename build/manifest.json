@@ -1,6 +1,6 @@
 {
-  "name": "360 Healthy Life Coach",
-  "short_name": "360",
+  "name": "Segura",
+  "short_name": "Segura",
   "orientation": "portrait",
   "icons": [
       {
@@ -37,6 +37,6 @@
       ],
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#EFEFEF",
-  "theme_color": "#EFEFEF"
+  "background_color": "#FFF",
+  "theme_color": "#FFF"
 }

@@ -16,7 +16,7 @@ function SampleUser({ user }) {
         <Grid item>
           <Avatar>{user.name[0]}</Avatar>
         </Grid>
-        <Grid item xs={12} alignContent="center">
+        <Grid item xs={12} >
           <Button
             onClick={() => onChangeCurrentUser(user)}
             className={css`
