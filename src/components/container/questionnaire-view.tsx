@@ -161,6 +161,7 @@ export class QuestionnaireView extends React.Component {
                       Back
                     </Button>
                     <Button
+                      disabled={!item.value}
                       variant="contained"
                       color="primary"
                       onClick={this.handleNext}
