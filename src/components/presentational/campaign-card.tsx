@@ -1,17 +1,29 @@
-import { Button, CardContent, Card, CardActions, Typography, CardMedia, Chip, ListItem, ListItemAvatar, Avatar, ListItemText, DialogTitle } from "@material-ui/core"
+import {
+  Button,
+  CardContent,
+  Card,
+  CardActions,
+  Typography,
+  CardMedia,
+  Chip,
+  ListItem,
+  ListItemAvatar,
+  Avatar,
+  ListItemText
+} from "@material-ui/core"
 import { css } from "emotion"
 import React from "react"
 
 export function CampaignCard(tile: any) {
   return (
     <Card
-      key={tile.name + Math.random()}
+      key={tile.name}
       className={css`
         display: flex;
       `}
     >
       <CardMedia
-        className={css` 
+        className={css`
           width: 150px;
           min-height: 100px;
         `}
@@ -32,14 +44,14 @@ export function CampaignCard(tile: any) {
         </Typography>
         <Typography component="p"> {tile.description} </Typography>
         <CardActions
-          className={css` 
+          className={css`
             margin: auto -10px;
           `}
         >
           <Chip key={tile.tag} label={tile.tag} variant="outlined" />
         </CardActions>
         <CardActions
-          className={css` 
+          className={css`
             margin: auto -10px;
           `}
         >
@@ -63,7 +75,7 @@ export function CampaignCard(tile: any) {
 
 export function CampaignListItem(tile: any) {
   return (
-    <ListItem alignItems="flex-start">
+    <ListItem alignItems="flex-start" key={tile.name}>
       <ListItemAvatar>
         <Avatar alt={tile.name} src={tile.img} />
       </ListItemAvatar>
@@ -78,5 +90,5 @@ export function CampaignListItem(tile: any) {
         }
       />
     </ListItem>
-  );
+  )
 }

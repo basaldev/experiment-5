@@ -52,6 +52,7 @@ export function App() {
       </Grid>
       <Grid item xs={12}>
         <Navbar
+          value={currentPage().value}
           routes={[
             e => {
               navigate("/", e)
