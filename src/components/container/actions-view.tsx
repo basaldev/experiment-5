@@ -2,20 +2,13 @@ import * as React from "react"
 import { Grid, Typography } from "@material-ui/core"
 import { css } from "emotion"
 import { SuggestionCard, SuggestionListItem } from "components/presentational/suggestion-card"
+import difference from 'lodash.difference';
 
-const NUMBER_OF_DISPLAY_MAIN = 2;
 
-export function ActionsView(props: any) {
-  const mainItems = props.mySuggestions.slice(0, NUMBER_OF_DISPLAY_MAIN);
-  const otherItems = props.mySuggestions.slice(NUMBER_OF_DISPLAY_MAIN);
-
-function showSuggestions(props: any) {
-  const { questionnaire, questionnaireFinished, mySuggestions } = props
+function showSuggestions(props: any): Array<any> {
+  //TODO move to user
+  const { questionnaire, mySuggestions } = props
   const { tag: suggestionTag } = mySuggestions
-
-  if (!questionnaireFinished) {
-    return <p>Please complete your Profile to get suggestions!</p>
-  }
 
   // Questionnaire is finished, so decide which suggestions to show the user
   // based on their questionnaire responses
@@ -30,7 +23,13 @@ function showSuggestions(props: any) {
   if (questionnaire[2].value < 5) suggest.push(mySuggestions[3])
   // questionnaire[3] ~ drink alcohol; mySuggestions[4] ~ brain
   if (questionnaire[3].value > 7) suggest.push(mySuggestions[4])
+  return suggest;
+};
 
+function yourSuggestions(suggest:Array<any>, questionnaireFinished:boolean){
+  if (!questionnaireFinished) {
+    return <p>Please complete your Profile to get suggestions!</p>
+  }
   return suggest.map(tile => (
     <Grid key={tile.tag} item>
       {SuggestionCard(tile)}
@@ -39,8 +38,11 @@ function showSuggestions(props: any) {
 }
 
 export function ActionsView(props: any) {
-  console.table(props.questionnaire)
-  console.table(props.mySuggestions)
+  // const mainItems = props.mySuggestions.slice(0, NUMBER_OF_DISPLAY_MAIN);
+  // const otherItems = props.mySuggestions.slice(NUMBER_OF_DISPLAY_MAIN);
+  const filteredSuggestions = showSuggestions(props);
+  const otherItems = props.mySuggestions.filter(e => !filteredSuggestions.includes(e));
+  debugger
   return (
     <>
       <Typography
@@ -59,7 +61,7 @@ export function ActionsView(props: any) {
           padding: 16px;
         `}
       >
-        {mainItems.map(tile => <Grid item>{SuggestionCard(tile)}</Grid>)}
+        {yourSuggestions(filteredSuggestions, props.questionnaireFinished)}
       </Grid>
       <Typography
         variant="title"
