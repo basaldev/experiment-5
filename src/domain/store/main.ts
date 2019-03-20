@@ -161,6 +161,7 @@ const defaultState: State = {
   scans: [
     {
       title: `Lastest Scan`,
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor',
       date: new Date().toLocaleDateString(),
       value: `Mild`,
       img: `https://www.healthimaging.com/sites/default/files/styles/media_image/public/2018-08/istock-587mribrain.jpg?itok=eO2Ooa-2`
@@ -171,50 +172,74 @@ const defaultState: State = {
     {
       id: 1,
       title: `How well do you eat?`,
+      shortTitle: 'Eating',
       description: `On a scale of 1 to 10, how healthily do you think you eat?`,
-      value: null
+      img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
+      value: null,
+      unit: ''
     },
     {
       id: 2,
       title: `How often do you exercise?`,
+      shortTitle: 'Exercise',
       description: `On a scale of 1 to 10, how often do you exercise?`,
-      value: null
+      img: `http://www.patriciabannan.com/_site/img/og.png`,
+      value: null,
+      unit: ''
     },
     {
       id: 3,
       title: `How many hours of sun do you get each day?`,
+      shortTitle: 'Sunlight',
       description: `On average, how many hours of sunlight do you get?`,
-      value: null
+      img: `https://images.unsplash.com/photo-1453785675141-67637e2d4b5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80`,
+      value: null,
+      unit: 'hrs'
     },
     {
       id: 4,
       title: `How often do you drink alcohol?`,
+      shortTitle: 'Alcohol',
       description: `How many days ago did you last drink alcohol?`,
-      value: null
+      img: `https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80`,
+      value: null,
+      unit: 'days ago'
     },
     {
       id: 5,
       title: `How much fresh air do you get each day?`,
+      shortTitle: 'Fresh air',
       description: `On a scale of 1 to 10, how much fresh air do you get?`,
-      value: null
+      img: `https://images-na.ssl-images-amazon.com/images/I/71gyQZepQsL._SL1200_.jpg`,
+      value: null,
+      unit: ''
     },
     {
       id: 6,
       title: `How easily do you trust people?`,
+      shortTitle: 'Trustness',
       description: `On a scale of 1 to 10, how easily do you trust people?`,
-      value: null
+      img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
+      value: null,
+      unit: ''
     },
     {
       id: 7,
       title: `How well can you breathe?`,
+      shortTitle: 'Breathe',
       description: `On a scale of 1 to 10, how well can you breathe?`,
-      value: null
+      img: `http://www.patriciabannan.com/_site/img/og.png`,
+      value: null,
+      unit: ''
     },
     {
       id: 8,
       title: `How many hours of the day are you awake for?`,
+      shortTitle: 'Awake',
       description: `On a scale of 1 to 10, how many hours are you awake per day?`,
-      value: null
+      img: `https://images.unsplash.com/photo-1453785675141-67637e2d4b5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80`,
+      value: null,
+      unit: 'hrs'
     }
   ],
   campaigns: [

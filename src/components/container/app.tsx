@@ -12,6 +12,7 @@ import { Navbar } from "components/presentational/navbar"
 import { ActionsView } from "components/container/actions-view"
 import { CameraView } from "components/container/camera-view"
 import { QuestionnaireView } from "components/container/questionnaire-view"
+import { ProfileView } from "components/container/profile-view"
 import { SocialView } from "components/container/social-view"
 import { navigate } from "domain/middleware/router"
 import { css } from "emotion"
@@ -20,13 +21,19 @@ export function App() {
   const content = (pageName => {
     switch (pageName) {
       case "HOME_PAGE":
+        if (getQuestionnaireFinished()) {
+          return (
+            <ProfileView
+              questionnaire={getQuestionnaire()}
+              scans={getScans()}
+            />
+          );
+        }
         return (
           <QuestionnaireView
             questionnaire={getQuestionnaire()}
-            questionnaireFinished={getQuestionnaireFinished()}
-            scans={getScans()}
           />
-        )
+        );
       case "SECOND_PAGE":
         return (
           <ActionsView
@@ -65,9 +72,6 @@ export function App() {
             },
             e => {
               navigate("/2", e)
-            },
-            e => {
-              navigate("/3", e)
             },
             e => {
               navigate("/4", e)

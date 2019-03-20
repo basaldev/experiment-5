@@ -10,6 +10,7 @@ export class CameraView extends React.Component {
     saveScan({
       title: `Lastest Scan`,
       date: new Date().toLocaleDateString(),
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor',
       value: `Mild`,
       img: dataUri
     })

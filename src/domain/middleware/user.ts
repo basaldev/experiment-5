@@ -23,7 +23,7 @@ export function saveDoctor(doctor: object) {
 
 export function questionareStatusChanged(isCompleted: boolean) {
   updateQuestionaireStatus(isCompleted)
-  page("/2")
+  // page("/2")
 }
 
 export function onSliderChange(questions, step, value) {

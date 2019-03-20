@@ -43,7 +43,7 @@ export default function startRouters() {
   page()
 }
 
-export function navigate(route: string, event: any) {
-  event.preventDefault()
+export function navigate(route: string, event?: any) {
+  if (event) event.preventDefault();
   page(route)
 }
