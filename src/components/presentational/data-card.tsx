@@ -2,18 +2,18 @@ import * as React from "react"
 import { Grid, Card, CardHeader, CardContent, Typography } from "@material-ui/core"
 import { yellow, green, cyan, pink, blue, red, purple, brown } from "@material-ui/core/colors";
 import { css } from "emotion"
-import { Sun } from "react-feather";
+import { Coffee, Sun, Activity, Moon, Wind, UserCheck, Smile, Clock } from "react-feather";
 
 const iconSize = '60px';
 const types = {
-  1: { color: yellow[700], icon: <Sun size={iconSize} /> },
-  2: { color: green[700], icon: <Sun size={iconSize} /> },
+  1: { color: yellow[700], icon: <Coffee size={iconSize} /> },
+  2: { color: green[700], icon: <Activity size={iconSize} /> },
   3: { color: cyan[700], icon: <Sun size={iconSize} /> },
-  4: { color: pink[700], icon: <Sun size={iconSize} /> },
-  5: { color: blue[700], icon: <Sun size={iconSize} /> },
-  6: { color: red[700], icon: <Sun size={iconSize} /> },
-  7: { color: purple[700], icon: <Sun size={iconSize} /> },
-  8: { color: brown[700], icon: <Sun size={iconSize} /> },
+  4: { color: pink[700], icon: <Moon size={iconSize} /> },
+  5: { color: blue[700], icon: <Wind size={iconSize} /> },
+  6: { color: red[700], icon: <UserCheck size={iconSize} /> },
+  7: { color: purple[700], icon: <Smile size={iconSize} /> },
+  8: { color: brown[700], icon: <Clock size={iconSize} /> },
 }
 
 export function DataCard(tile: any) {

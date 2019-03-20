@@ -1,10 +1,10 @@
 import { createAtom } from "js-atom"
 import { Bubble } from "components/presentational/bubble"
 
-export type HomePage = { name: "HOME_PAGE" }
-export type SecondPage = { name: "SECOND_PAGE" }
-export type ThirdPage = { name: "THIRD_PAGE" }
-export type FourthPage = { name: "FOURTH_PAGE" }
+export type HomePage = { name: "HOME_PAGE"; value: 0 }
+export type SecondPage = { name: "SECOND_PAGE"; value: 1 }
+export type ThirdPage = { name: "THIRD_PAGE"; value: 2 }
+export type FourthPage = { name: "FOURTH_PAGE"; value: 3 }
 
 export type Page = HomePage | SecondPage | ThirdPage | FourthPage
 
@@ -25,11 +25,11 @@ export type State = {
   inputText: string
   questionnaireFinished: boolean
   sessionAttributes: any
-  campaigns: any;
+  campaigns: any
 }
 
 const defaultState: State = {
-  currentPage: { name: "HOME_PAGE" },
+  currentPage: { name: "HOME_PAGE", value: 0 },
   allItems: [],
   filteredItems: [],
   messages: [
@@ -164,7 +164,7 @@ const defaultState: State = {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor',
       date: new Date().toLocaleDateString(),
       value: `Mild`,
-      img: `https://path.upmc.edu/cases/case74/images/gross4.jpg`
+      img: `https://www.healthimaging.com/sites/default/files/styles/media_image/public/2018-08/istock-587mribrain.jpg?itok=eO2Ooa-2`
     }
   ],
   questionnaireFinished: false,
@@ -176,7 +176,7 @@ const defaultState: State = {
       description: `On a scale of 1 to 10, how healthily do you think you eat?`,
       img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
       value: null,
-      unit: 'hr'
+      unit: ''
     },
     {
       id: 2,
@@ -185,7 +185,7 @@ const defaultState: State = {
       description: `On a scale of 1 to 10, how often do you exercise?`,
       img: `http://www.patriciabannan.com/_site/img/og.png`,
       value: null,
-      unit: 'hr'
+      unit: ''
     },
     {
       id: 3,
@@ -194,7 +194,7 @@ const defaultState: State = {
       description: `On average, how many hours of sunlight do you get?`,
       img: `https://images.unsplash.com/photo-1453785675141-67637e2d4b5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80`,
       value: null,
-      unit: 'hr'
+      unit: 'hrs'
     },
     {
       id: 4,
@@ -203,7 +203,7 @@ const defaultState: State = {
       description: `How many days ago did you last drink alcohol?`,
       img: `https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80`,
       value: null,
-      unit: 'hr'
+      unit: 'days ago'
     },
     {
       id: 5,
@@ -212,7 +212,7 @@ const defaultState: State = {
       description: `On a scale of 1 to 10, how much fresh air do you get?`,
       img: `https://images-na.ssl-images-amazon.com/images/I/71gyQZepQsL._SL1200_.jpg`,
       value: null,
-      unit: 'hr'
+      unit: ''
     },
     {
       id: 6,
@@ -221,7 +221,7 @@ const defaultState: State = {
       description: `On a scale of 1 to 10, how easily do you trust people?`,
       img: `https://s3-us-west-1.amazonaws.com/replika-landing-images/opengraph/default/ai-companion-who-cares-cover.png`,
       value: null,
-      unit: 'hr'
+      unit: ''
     },
     {
       id: 7,
@@ -229,8 +229,8 @@ const defaultState: State = {
       shortTitle: 'Breathe',
       description: `On a scale of 1 to 10, how well can you breathe?`,
       img: `http://www.patriciabannan.com/_site/img/og.png`,
-      value: 0,
-      unit: 'hr'
+      value: null,
+      unit: ''
     },
     {
       id: 8,
@@ -238,8 +238,8 @@ const defaultState: State = {
       shortTitle: 'Awake',
       description: `On a scale of 1 to 10, how many hours are you awake per day?`,
       img: `https://images.unsplash.com/photo-1453785675141-67637e2d4b5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1636&q=80`,
-      value: 0,
-      unit: 'hr'
+      value: null,
+      unit: 'hrs'
     }
   ],
   campaigns: [

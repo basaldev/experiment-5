@@ -9,8 +9,8 @@ export function FileCard(tile: any, updatePhoto?: any) {
         src={tile.img}
         className={css`
           && {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             margin: 20px auto;
             filter: invert(1);
           }

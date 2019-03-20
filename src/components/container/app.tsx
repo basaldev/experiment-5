@@ -12,7 +12,8 @@ import { Navbar } from "components/presentational/navbar"
 import { ActionsView } from "components/container/actions-view"
 import { CameraView } from "components/container/camera-view"
 import { QuestionnaireView } from "components/container/questionnaire-view"
-import { SocialView } from "components/container/social-view";
+import { ProfileView } from "components/container/profile-view"
+import { SocialView } from "components/container/social-view"
 import { navigate } from "domain/middleware/router"
 import { css } from "emotion"
 
@@ -20,15 +21,27 @@ export function App() {
   const content = (pageName => {
     switch (pageName) {
       case "HOME_PAGE":
+        if (getQuestionnaireFinished()) {
+          return (
+            <ProfileView
+              questionnaire={getQuestionnaire()}
+              scans={getScans()}
+            />
+          );
+        }
         return (
           <QuestionnaireView
             questionnaire={getQuestionnaire()}
+          />
+        );
+      case "SECOND_PAGE":
+        return (
+          <ActionsView
+            questionnaire={getQuestionnaire()}
             questionnaireFinished={getQuestionnaireFinished()}
-            scans={getScans()}
+            mySuggestions={getmySuggestions()}
           />
         )
-      case "SECOND_PAGE":
-        return <ActionsView mySuggestions={getmySuggestions()} />
       case "THIRD_PAGE":
         return <CameraView />
       case "FOURTH_PAGE":
@@ -52,6 +65,7 @@ export function App() {
       </Grid>
       <Grid item xs={12}>
         <Navbar
+          value={currentPage().value}
           routes={[
             e => {
               navigate("/", e)
