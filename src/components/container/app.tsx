@@ -60,9 +60,6 @@ export function App() {
               navigate("/2", e)
             },
             e => {
-              navigate("/3", e)
-            },
-            e => {
               navigate("/4", e)
             }
           ]}

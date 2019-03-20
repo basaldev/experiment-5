@@ -1,33 +1,47 @@
-import { Grid, Card, CardContent, CardMedia, Typography } from "@material-ui/core"
+import { Grid, Card, CardHeader, CardContent, CardMedia, Avatar } from "@material-ui/core"
 import * as React from "react"
 import { css } from "emotion"
 
-export function FileCard(tile: any) {
+export function FileCard(tile: any, updatePhoto?: any) {
   return (
     <Grid item xs={12}>
+      <Avatar
+        src={tile.img}
+        className={css`
+          && {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            filter: invert(1);
+          }
+        `}
+        onClick={updatePhoto}
+      />
       <Card
         className={css`
-          display: flex;
+          && {
+            box-shadow: none;
+          }
         `}
       >
-        <CardContent
+        <CardHeader
+          title={`${tile.value} Depression`}
+          subheader={tile.date}
           className={css`
-            flex: 1 0 auto;
+            && {
+              padding-bottom: 0;
+              div {
+                display: flex;
+                align-items: center;
+
+                > span:first-child {
+                  flex: 1;
+                }
+              }
+            }
           `}
-        >
-          <Typography component="h5" variant="h5">
-            {tile.value} Depression
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            Last scanned {tile.date}
-          </Typography>
-        </CardContent>
-        <CardMedia
-          className={css`
-            width: 151px;
-          `}
-          image={tile.img}
         />
+        <CardContent>{tile.description}</CardContent>
       </Card>
     </Grid>
   )
