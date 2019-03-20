@@ -42,7 +42,6 @@ export function ActionsView(props: any) {
   // const otherItems = props.mySuggestions.slice(NUMBER_OF_DISPLAY_MAIN);
   const filteredSuggestions = showSuggestions(props);
   const otherItems = props.mySuggestions.filter(e => !filteredSuggestions.includes(e));
-  debugger
   return (
     <>
       <Typography
